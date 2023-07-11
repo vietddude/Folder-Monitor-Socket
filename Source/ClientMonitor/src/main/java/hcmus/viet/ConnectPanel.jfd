@@ -1,0 +1,49 @@
+JFDML JFormDesigner: "8.1.0.0.283" Java: "17.0.6" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp connectPanel:::::x, comp scrollPane1:::::x}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp connectPanel:::p::p, space s:::p, comp scrollPane1::::236:x, space :::p}}"
+		} ) {
+			name: "connectFrame"
+			addEvent( new FormEvent( "java.awt.event.WindowListener", "windowClosing", "connectFrameWindowClosing", true ) )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :::p, par t {comp portLabel:::p::p, comp ipLabel:::p::p}, space s:::p, par l:::p {comp portTextField:::::x, comp ipTextField:::p:190:p}, space :::x}, seq t {space :::x, comp connectBtn:::p::p, space :::p}}"
+				"$verticalGroup": "par l {seq l {space :::p, par b {comp ipLabel::b:p::p, comp ipTextField::b:p::p}, space s:::p, par b {comp portLabel::b:p::p, comp portTextField::b:p::p}, space s:::p, comp connectBtn:::p::p, space :::x}}"
+			} ) {
+				name: "connectPanel"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "ipLabel"
+					"text": "IP Address:"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "portLabel"
+					"text": "Port Number:"
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "portTextField"
+					addEvent( new FormEvent( "java.awt.event.KeyListener", "keyTyped", "portTextFieldKeyTyped", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "connectBtn"
+					"text": "Connect"
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "connectBtn", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "ipTextField"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "logTextArea"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 10, 195 )
+			"size": new java.awt.Dimension( 320, 435 )
+		} )
+	}
+}
